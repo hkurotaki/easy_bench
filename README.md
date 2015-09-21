@@ -8,6 +8,12 @@ a simple benchmark utility.
 git clone https://github.com/napman/easy_bench.git
 ```
 
+or
+
+```
+wget https://raw.githubusercontent.com/napman/easy_bench/master/bench.py
+```
+
 ## usage
 
 ```
