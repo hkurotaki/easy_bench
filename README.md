@@ -27,7 +27,7 @@ That's it. it makes a file "benchmark.log" and stores benchmark
 
 ## alternative usage
 
-```
+```python
 bench = Bench("some_process")
 some_process()
 bench.end()
@@ -49,7 +49,7 @@ $ sum.py [logfile]
 
 it's useful when you took a benchmark with loops like;
 
-```
+```python
 for i in xrange(1000):
 	with bench("some_process"):
 		some_process()
