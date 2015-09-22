@@ -16,7 +16,7 @@ wget https://raw.githubusercontent.com/napman/easy_bench/master/bench.py
 
 ## usage
 
-```
+```python
 from easy_bench.bench import * # or just "from bench import *" if you installed with wget.
 
 with bench("some_process"):
