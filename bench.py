@@ -51,7 +51,8 @@ class Bench():
     def end(self):
         global benchmark_log_file
         time_spent = self.get_span()
-        benchmark_log_file.write("%s\t%f\n" % (self.key, time_spent))
+        #benchmark_log_file.write("%s\t%f\n" % (self.key, time_spent))
+	benchmark_log_file.write("%s\t%.10f\n" % (self.key, time_spent))
         return time_spent
     
     def __enter__(self):
@@ -74,3 +75,14 @@ def sum_bench(benchmark_file=DEFAULT_LOGFILE):
             counter[line[0]] += float(line[1])
             
     return counter
+
+def sum_count_bench(benchmark_file=DEFAULT_LOGFILE):
+    sum_counter = collections.Counter()
+    num_counter = collections.Counter()
+    with open(benchmark_file, 'r') as fp:
+        lines = [line.split("\t") for line in fp.read().splitlines()]
+        for line in lines:
+            sum_counter[line[0]] += float(line[1])
+            num_counter[line[0]] += 1
+            
+    return sum_counter, num_counter
