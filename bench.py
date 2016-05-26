@@ -52,7 +52,7 @@ class Bench():
         global benchmark_log_file
         time_spent = self.get_span()
         #benchmark_log_file.write("%s\t%f\n" % (self.key, time_spent))
-	benchmark_log_file.write("%s\t%.10f\n" % (self.key, time_spent))
+        benchmark_log_file.write("%s\t%.10f\n" % (self.key, time_spent))
         return time_spent
     
     def __enter__(self):
